@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -50,13 +51,16 @@ body {
   margin-bottom: 30px;
   color: rgb(54, 82, 238);
 }
+
 .inputs-section__bill-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 .inputs-section__bill-input:focus {
   outline: none;
   border: 2px solid rgb(9, 13, 238);
 }
+
 .inputs-section__bill-input:hover {
   cursor: pointer;
 }
@@ -68,6 +72,7 @@ body {
   gap: 15px;
   margin-bottom: 30px;
 }
+
 .btns__legend {
   display: block;
   color: rgb(14, 29, 247);
@@ -85,13 +90,16 @@ body {
   border-radius: 4px;
   font-family: "Space Mono", monospace;
 }
+
 .btns__button:hover {
   cursor: pointer;
 }
+
 .btns__button:active {
   background-color: rgb(11, 46, 247);
   color: rgb(7, 245, 78);
 }
+
 @media (min-width: 1440px) {
   .btns__button {
     width: 120px;
@@ -116,6 +124,7 @@ body {
   text-align: center;
   color: hsl(186deg, 14%, 43%);
 }
+
 .btns__custom::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -123,6 +132,7 @@ body {
   outline: none;
   border: 2px solid rgb(41, 5, 248);
 }
+
 .btns__custom:hover {
   cursor: pointer;
 }
@@ -149,15 +159,18 @@ body {
   background-position: 10px center;
   background-color: hsl(189deg, 41%, 97%);
   margin-bottom: 30px;
-  color: hsl(183deg, 100%, 15%);
+  color: rgb(14, 10, 248);
 }
+
 .inputs-section__people-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 .inputs-section__people-input:focus {
   outline: none;
   border: 2px solid hsl(172deg, 67%, 45%);
 }
+
 .inputs-section__people-input:hover {
   cursor: pointer;
 }
@@ -165,6 +178,7 @@ body {
 .error {
   border-color: rgb(164, 68, 68);
 }
+
 .error::after {
   content: "Can't be Zero";
   color: rgb(164, 68, 68);
@@ -195,15 +209,18 @@ body {
   font-size: 0.75em;
   color: hsl(189deg, 41%, 97%);
 }
+
 .result-amount__person {
   color: hsl(185deg, 41%, 84%);
   font-size: 0.65em;
 }
+
 .result-amount__value {
-  font-size: 1em;
+  font-size: 0.8em;
   color: hsl(172deg, 67%, 45%);
   text-align: right;
 }
+
 @media (min-width: 1440px) {
   .result-amount__value {
     font-size: 1.5em;
@@ -214,15 +231,18 @@ body {
   font-size: 0.75em;
   color: hsl(189deg, 41%, 97%);
 }
+
 .result-total__person {
   color: hsl(185deg, 41%, 84%);
   font-size: 0.65em;
 }
+
 .result-total__value {
-  font-size: 1em;
+  font-size: 0.8em;
   color: hsl(172deg, 67%, 45%);
   text-align: right;
 }
+
 @media (min-width: 1440px) {
   .result-total__value {
     font-size: 1.5em;
@@ -233,16 +253,17 @@ body {
   width: 100%;
   height: 50px;
   background-color: hsl(172deg, 67%, 45%);
-  color: hsl(183deg, 100%, 15%);
+  color: rgb(4, 29, 247);
   text-transform: uppercase;
   font-size: 1em;
   border: none;
   border-radius: 4px;
   font-family: "Space Mono", monospace;
 }
+
 .result-reset:hover {
   cursor: pointer;
-  background-color: hsl(185deg, 41%, 84%);
+  background-color: rgb(147, 165, 245);
 }
 
 .attribution {
@@ -260,22 +281,27 @@ body {
   color: hsl(183deg, 100%, 15%);
 }
 
-/*-----------Desktop----------------*/
+/*-----------DESKTOP----------------*/
+
 @media (min-width: 1440px) {
   .header-title {
     margin: 160px 0 90px;
   }
+
   .calculator-container {
     width: 900px;
     display: flex;
     gap: 50px;
   }
+
   .inputs-section {
     flex: 1;
   }
+
   .result-section {
     flex: 1;
   }
+
   .btns {
     grid-template-columns: repeat(3, 1fr);
   }
