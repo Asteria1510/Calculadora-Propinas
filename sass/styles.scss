@@ -1,117 +1,127 @@
+@use "variables";
 @use "initial";
-//@use "variables";
 @use "mixins";
 
-.header-title {
+.header__title {
   text-align: center;
-  color: variables.$Dark-grayish-cyan;
+  color: variables.$Lemon;
   font-size: 1em;
-  letter-spacing: 8px;
   margin: 30px 0;
+  letter-spacing: 8px;
 }
-
 .calculator-container {
-  width: 375px;
   background-color: variables.$White;
+  width: 375px;
   margin: auto;
   border-radius: 16px;
   padding: 32px;
 }
-
 .inputs-section__bill-label {
   @include mixins.label;
 }
-
 .inputs-section__bill-input {
   @include mixins.input("../images/icon-dollar.svg");
 }
-
 .btns {
   border: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin-bottom: 30px;
-
   &__legend {
     @include mixins.label;
   }
-}
-
-.btns__button {
-  @include mixins.button;
-}
-
-.btns__custom {
-  @include mixins.input(unset);
-  text-align: center;
-  color: variables.$Dark-grayish-cyan;
+  &__button {
+    width: 147px;
+    height: 50px;
+    background-color: variables.$blue;
+    color: variables.$Very-lightgrayish-cyan;
+    font-family: variables.$font;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    // &:active{
+    //     background-color: variables.$Strong-cyan;
+    //     color: variables.$Very-dark-cyan;
+    // }
+    &:hover {
+      cursor: pointer;
+    }
+    &--selected {
+      background-color: variables.$Very-dark-blue;
+      color: variables.$blue;
+    }
+  }
+  &__custom {
+    @include mixins.input(unset);
+    text-align: center;
+    color: variables.$Dark-grayish-cyan;
+  }
 }
 
 .inputs-section__people-label {
   @include mixins.label;
-  position: relative;
 }
-
 .inputs-section__people-input {
   @include mixins.input("../images/icon-person.svg");
 }
-
 .error {
-  border-color: rgb(164, 68, 68);
+  color: rgb(164, 68, 68);
   &::after {
-    content: "Can't be Zero";
-    color: rgb(164, 68, 68);
+    content: "Can't be zero";
     font-size: 0.7em;
-    position: absolute;
-    right: 0;
-    top: 5px;
   }
 }
-
 .result-section {
-  width: 100%;
-  background-color: variables.$Very-dark-cyan;
+  background-color: variables.$Lemon;
   border-radius: 12px;
   padding: 42px 24px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.result {
+.results {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-bottom: 20px;
+  &__tip-amount {
+    font-size: 0.75em;
+    color: variables.$Very-lightgrayish-cyan;
+  }
+  &__tip-person {
+    font-size: 0.65em;
+    color: variables.$Light-grayish-cyan;
+  }
+  &__tip-value {
+    font-size: 1.2em;
+    color: variables.$Very-dark-blue;
+    text-align: right;
+  }
+  &__total-amount {
+    @extend .results__tip-amount;
+  }
+  &__total-person {
+    @extend .results__tip-person;
+  }
+  &__total-value {
+    @extend .results__tip-value;
+  }
 }
-
-.result-amount {
-  @include mixins.result;
-}
-
-.result-total {
-  @include mixins.result;
-}
-
-.result-reset {
-  width: 100%;
+.result-section__reset {
+  background-color: variables.$Very-dark-blue;
   height: 50px;
-  background-color: variables.$Strong-cyan;
-  color: variables.$Very-dark-cyan;
+  color: variables.$blue;
   text-transform: uppercase;
-
+  font-family: variables.$font;
   font-size: 1em;
   border: none;
   border-radius: 4px;
-  font-family: variables.$Mono-space-font;
-
   &:hover {
     cursor: pointer;
     background-color: variables.$Light-grayish-cyan;
   }
 }
-
 .attribution {
   font-size: 14px;
   text-align: center;
@@ -122,15 +132,9 @@
   color: hsl(228, 45%, 44%);
 }
 
-.btns__button--selected {
-  background-color: variables.$Strong-cyan;
-  color: variables.$Very-dark-cyan;
-}
-
-/*-----------DESKTOP----------------*/
-
+/*---------------------- Desktop ----------------------*/
 @media (min-width: 1440px) {
-  .header-title {
+  .header__title {
     margin: 160px 0 90px;
   }
   .calculator-container {
@@ -146,5 +150,16 @@
   }
   .btns {
     grid-template-columns: repeat(3, 1fr);
+    &__button {
+      width: 120px;
+    }
+  }
+  .results {
+    &__tip-value {
+      font-size: 2em;
+    }
+    &__total-value {
+      font-size: 2em;
+    }
   }
 }

@@ -14,64 +14,65 @@
 
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="./styles.css" />
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
   </head>
   <body>
     <header class="header">
-      <h1 class="header-title">SPLITTER</h1>
+      <h1 class="header__title">
+        SPLI <br />
+        TTER
+      </h1>
     </header>
 
     <section class="calculator-container">
       <div class="inputs-section">
-        <label class="inputs-section__bill-label" for="bill">Bill</label>
+        <label for="bill" class="inputs-section__bill-label">Bill</label>
         <input
-          class="inputs-section__bill-input"
           id="bill"
+          class="inputs-section__bill-input"
           type="number"
-          value="0"
+          value="100"
         />
 
         <fieldset class="btns">
           <legend class="btns__legend">Select Tip %</legend>
-          <button class="btns__button btns__button--selected">0.3%</button>
-          <button class="btns__button">0.5%</button>
-          <button class="btns__button">7.5%</button>
+          <button class="btns__button btns__button--selected">5%</button>
           <button class="btns__button">10%</button>
           <button class="btns__button">15%</button>
+          <button class="btns__button">25%</button>
+          <button class="btns__button">50%</button>
           <input class="btns__custom" type="number" placeholder="Custom" />
         </fieldset>
 
-        <label class="inputs-section__people-label" for="people"
-          >Number of People <span class="alert"></span
-        ></label>
+        <label for="people" class="inputs-section__people-label"
+          >Number of People <span id="alert"></span>
+        </label>
         <input
-          class="inputs-section__people-input"
           id="people"
+          class="inputs-section__people-input"
+          min="1"
           type="number"
-          min="0"
-          value="3"
+          value="5"
         />
       </div>
 
       <div class="result-section">
-        <div class="result">
+        <div class="results">
           <div>
-            <p class="result-amount">Tip Amount</p>
-            <p class="result-amount__person">/ person</p>
+            <p class="results__tip-amount">Tip Amount</p>
+            <p class="results__tip-person">/ person</p>
           </div>
 
-          <p class="result-amount__value">$0</p>
+          <p class="results__tip-value">0</p>
 
           <div>
-            <p class="result-total">Total</p>
-            <p class="result-total__person">/ person</p>
+            <p class="results__total-amount">Total</p>
+            <p class="results__total-person">/ person</p>
           </div>
 
-          <p class="result-total__value">$0</p>
+          <p class="results__total-value">0</p>
         </div>
-        <button class="result-reset">Reset</button>
+
+        <button class="result-section__reset">Reset</button>
       </div>
     </section>
 
